@@ -5,14 +5,14 @@
 class Scmd < Formula
   desc "AI-powered slash commands for any terminal. Works offline by default."
   homepage "https://github.com/sunboy/scmd"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   depends_on "llama.cpp" => :optional
 
   on_macos do
-    url "https://github.com/sunboy/scmd/releases/download/v0.2.0/scmd_0.2.0_macOS_all_brew.tar.gz"
-    sha256 "2f8f2bf81e3b7e915e7390f7103d5c51542caf6fee244c58fd30bc0357d1ba6c"
+    url "https://github.com/sunboy/scmd/releases/download/v0.2.1/scmd_0.2.1_macOS_all_brew.tar.gz"
+    sha256 "56ea4e8fb2952ae8d7d3ae9c014fa918d3c1fac48e9c370f2681758402da438c"
 
     def install
       bin.install "scmd"
@@ -24,8 +24,8 @@ class Scmd < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sunboy/scmd/releases/download/v0.2.0/scmd_0.2.0_linux_amd64_brew.tar.gz"
-      sha256 "a631be95f10ace9848b2115434e61864fa486bc58b04e289a0299783ee6416fe"
+      url "https://github.com/sunboy/scmd/releases/download/v0.2.1/scmd_0.2.1_linux_amd64_brew.tar.gz"
+      sha256 "1c4eedeeb731d041fed0c69ee9b5cefff1156a2e3d3f05aba57e391858a1930a"
       def install
         bin.install "scmd"
         bash_completion.install "completions/scmd.bash" => "scmd"
@@ -34,8 +34,8 @@ class Scmd < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sunboy/scmd/releases/download/v0.2.0/scmd_0.2.0_linux_arm64_brew.tar.gz"
-      sha256 "17484d8ea5cf095e7e95b222b6df7e006ef1b252a22848fc6c6b508fd974868b"
+      url "https://github.com/sunboy/scmd/releases/download/v0.2.1/scmd_0.2.1_linux_arm64_brew.tar.gz"
+      sha256 "fa706b560baba0abf5e80f52d834f3923e89d0cc73095f1f4ef0f83763410681"
       def install
         bin.install "scmd"
         bash_completion.install "completions/scmd.bash" => "scmd"
