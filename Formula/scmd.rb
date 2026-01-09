@@ -5,17 +5,18 @@
 class Scmd < Formula
   desc "AI-powered slash commands for any terminal. Works offline by default."
   homepage "https://github.com/sunboy/scmd"
-  version "0.2.1"
+  version "0.3.0"
   license "MIT"
 
-  depends_on "llama.cpp" => :optional
-
   on_macos do
-    url "https://github.com/sunboy/scmd/releases/download/v0.2.1/scmd_0.2.1_macOS_all_brew.tar.gz"
-    sha256 "e650bca80a64294844c71b6be7a97770d7f42e97451f8d816c1b729fcb7a0b9d"
+    url "https://github.com/sunboy/scmd/releases/download/v0.3.0/scmd_0.3.0_macOS_all_brew.tar.gz"
+    sha256 "097e71043ba874081e384dda4b37b4f3097583230cc8dae242a10f5d72ea6750"
 
     def install
       bin.install "scmd"
+      # Install bundled llama-server
+      libexec.install "libexec/llama-server"
+      # Shell completions
       bash_completion.install "completions/scmd.bash" => "scmd"
       zsh_completion.install "completions/scmd.zsh" => "_scmd"
       fish_completion.install "completions/scmd.fish"
@@ -24,20 +25,13 @@ class Scmd < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sunboy/scmd/releases/download/v0.2.1/scmd_0.2.1_linux_amd64_brew.tar.gz"
-      sha256 "95f3d48099fae39eb7a7bdc6b726888b2bcf865926e6c4c7e1c8414996b0a1cd"
+      url "https://github.com/sunboy/scmd/releases/download/v0.3.0/scmd_0.3.0_linux_amd64_brew.tar.gz"
+      sha256 "d9e8a18681389444f5027a9471e35373aa6f3a5be37d19b7112e46bc553595da"
       def install
         bin.install "scmd"
-        bash_completion.install "completions/scmd.bash" => "scmd"
-        zsh_completion.install "completions/scmd.zsh" => "_scmd"
-        fish_completion.install "completions/scmd.fish"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sunboy/scmd/releases/download/v0.2.1/scmd_0.2.1_linux_arm64_brew.tar.gz"
-      sha256 "a0204558556a295feda536f64a6ada959d6d745651cb3adf72ba856a7e59f423"
-      def install
-        bin.install "scmd"
+        # Install bundled llama-server
+        libexec.install "libexec/llama-server"
+        # Shell completions
         bash_completion.install "completions/scmd.bash" => "scmd"
         zsh_completion.install "completions/scmd.zsh" => "_scmd"
         fish_completion.install "completions/scmd.fish"
