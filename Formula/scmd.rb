@@ -5,12 +5,12 @@
 class Scmd < Formula
   desc "AI-powered slash commands for any terminal. Works offline by default."
   homepage "https://github.com/sunboy/scmd"
-  version "0.3.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    url "https://github.com/sunboy/scmd/releases/download/v0.3.1/scmd_0.3.1_macOS_all_brew.tar.gz"
-    sha256 "bf9287faaa0e8bb2685bcd9b9b2d7d4d4fd4789ff6dbfe3110cf600d2746322b"
+    url "https://github.com/sunboy/scmd/releases/download/v0.2.0/scmd_0.2.0_macOS_all_brew.tar.gz"
+    sha256 "890630c871123bf9d5a88f7d1962d83366c270828ef9380e09627f71bcd2367d"
 
     def install
       bin.install "scmd"
@@ -25,8 +25,8 @@ class Scmd < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sunboy/scmd/releases/download/v0.3.1/scmd_0.3.1_linux_amd64_brew.tar.gz"
-      sha256 "dbf6c45e45d6d494ba881911f26dd04a6de70cda0b5c8c261089691bd09c7c0b"
+      url "https://github.com/sunboy/scmd/releases/download/v0.2.0/scmd_0.2.0_linux_amd64_brew.tar.gz"
+      sha256 "df2bf9a9b6d6badbe22af193b82ad8e0fb9b9b61703884fd1daf424c14e3b99a"
       def install
         bin.install "scmd"
         # Install bundled llama-server
