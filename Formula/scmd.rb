@@ -10,7 +10,7 @@ class Scmd < Formula
 
   on_macos do
     url "https://github.com/sunboy/scmd/releases/download/v0.2.0/scmd_0.2.0_macOS_all_brew.tar.gz"
-    sha256 "890630c871123bf9d5a88f7d1962d83366c270828ef9380e09627f71bcd2367d"
+    sha256 "c98e7e9636edac092bae0e41b05ed5ade8a92f691c33d421bd0f52ff0ef4937f"
 
     def install
       bin.install "scmd"
@@ -26,7 +26,7 @@ class Scmd < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/sunboy/scmd/releases/download/v0.2.0/scmd_0.2.0_linux_amd64_brew.tar.gz"
-      sha256 "df2bf9a9b6d6badbe22af193b82ad8e0fb9b9b61703884fd1daf424c14e3b99a"
+      sha256 "7d9be8d4bf28a8e7f83e4d4e36ae2118088ce6a055bfbc1b123aa5183e378e96"
       def install
         bin.install "scmd"
         # Install bundled llama-server
